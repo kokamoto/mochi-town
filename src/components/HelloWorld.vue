@@ -1,6 +1,20 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <div class="columns">
+  <div class="column">
+    First column
+  </div>
+  <div class="column">
+    Second column
+  </div>
+  <div class="column">
+    Third column
+  </div>
+  <div class="column">
+    Fourth column
+  </div>
+</div>
     <p>
       For guide and recipes on how to configure / customize this project,<br>
       check out the
