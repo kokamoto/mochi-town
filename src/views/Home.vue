@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <img src="../assets/logo.png">
-    <hello-world msg="Welcome to Your Vue.js + TypeScript App"/>
+    <hello-world msg="Welcome to Mochi-Town"/>
   </div>
 </template>
 
