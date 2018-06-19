@@ -6,8 +6,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Greeting
-          command: echo Hello, world.
+          name: NPM Install
+          command: npm install
       - run:
-          name: Print the Current Time
-          command: date
+          name: Unit Tests
+          command: npm run test:unit
+      - run:
+          name: E2E Tests
+          command: npm run test:e2e
