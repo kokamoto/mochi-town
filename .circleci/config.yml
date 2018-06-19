@@ -2,12 +2,28 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: cypress/base:8
+    working_directory: ~/app
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - v1.1-npm-deps-{{ checksum "package.json" }}
+            - v1.1-npm-deps
+      - run: npm install
+      - save_cache:
+          key: v1.1-npm-deps-{{ checksum "package.json" }}
+          paths:
+            - node_modules
       - run:
-          name: Greeting
-          command: echo Hello, world.
-      - run:
-          name: Print the Current Time
-          command: date
+          name: Unit Tests
+          command: npm run test:unit
+    #   - run:
+    #       name: E2E Tests
+    #       command: npm run test:headless-e2e
+    #   - store_test_results:
+    #       path: multiple-results
+    #   - store_artifacts:
+    #       path: cypress/videos
+    #   - store_artifacts:
+    #       path: cypress/screenshots
