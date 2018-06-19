@@ -18,12 +18,12 @@ jobs:
       - run:
           name: Unit Tests
           command: npm run test:unit
-      - run:
-          name: E2E Tests
-          command: npm run test:headless-e2e
-      - store_test_results:
-          path: multiple-results
-      - store_artifacts:
-          path: cypress/videos
-      - store_artifacts:
-          path: cypress/screenshots
+    #   - run:
+    #       name: E2E Tests
+    #       command: npm run test:headless-e2e
+    #   - store_test_results:
+    #       path: multiple-results
+    #   - store_artifacts:
+    #       path: cypress/videos
+    #   - store_artifacts:
+    #       path: cypress/screenshots
