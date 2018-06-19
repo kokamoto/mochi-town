@@ -16,9 +16,6 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: NPM Install
-          command: npm install
-      - run:
           name: Unit Tests
           command: npm run test:unit
       - run:
